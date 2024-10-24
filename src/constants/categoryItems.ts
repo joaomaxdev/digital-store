@@ -4,27 +4,27 @@ import {
   capIcon,
   headphonesIcon,
   shoesIcon,
-} from './images'
+} from "./images";
 
 export const CATEGORY_ITEMS = [
   {
     iconSrc: shirtIcon,
-    label: 'Camisetas',
+    label: "Camisetas",
   },
   {
     iconSrc: pantsIcon,
-    label: 'Calças',
+    label: "Calças",
   },
   {
     iconSrc: capIcon,
-    label: 'Bonés',
+    label: "Bonés",
   },
   {
     iconSrc: headphonesIcon,
-    label: 'Headphones',
+    label: "Headphones",
   },
   {
     iconSrc: shoesIcon,
-    label: 'Tênis',
+    label: "Tênis",
   },
-]
+];

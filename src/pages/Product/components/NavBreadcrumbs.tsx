@@ -1,4 +1,4 @@
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams } from "react-router-dom";
 
 import {
   Breadcrumb,
@@ -7,21 +7,21 @@ import {
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
-} from '@/components/ui/breadcrumb'
+} from "@/components/ui/breadcrumb";
 
-import { MOCK_PRODUCTS } from '@/constants'
+import { MOCK_PRODUCTS } from "@/constants";
 
 export function NavBreadcrumbs() {
-  const { id } = useParams<{ id: string }>()
+  const { id } = useParams<{ id: string }>();
 
-  const pName = MOCK_PRODUCTS.find((p) => p.id === id)
+  const pName = MOCK_PRODUCTS.find((p) => p.id === id);
 
   return (
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link to='/'>Home</Link>
+            <Link to="/">Home</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
@@ -29,18 +29,18 @@ export function NavBreadcrumbs() {
 
         <BreadcrumbItem>
           <BreadcrumbLink asChild>
-            <Link to='/produtos'>Produtos</Link>
+            <Link to="/produtos">Produtos</Link>
           </BreadcrumbLink>
         </BreadcrumbItem>
 
         <BreadcrumbSeparator />
 
         <BreadcrumbItem>
-          <BreadcrumbPage className='text-zinc-600 font-bold'>
-            {pName?.name || 'Produto não encontrado'}
+          <BreadcrumbPage className="text-zinc-600 font-bold">
+            {pName?.name || "Produto não encontrado"}
           </BreadcrumbPage>
         </BreadcrumbItem>
       </BreadcrumbList>
     </Breadcrumb>
-  )
+  );
 }

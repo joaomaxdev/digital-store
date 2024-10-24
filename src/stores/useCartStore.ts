@@ -1,14 +1,14 @@
-import { Product } from '@/types'
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { Product } from "@/types";
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 type CartState = {
-  productsInCart: { product: Product; quantity: number }[]
-  addToCart: (product: Product) => void
-  removeFromCart: (productId: string) => void
-  updateQuantity: (productId: string, quantity: number) => void
-  clearCart: () => void
-}
+  productsInCart: { product: Product; quantity: number }[];
+  addToCart: (product: Product) => void;
+  removeFromCart: (productId: string) => void;
+  updateQuantity: (productId: string, quantity: number) => void;
+  clearCart: () => void;
+};
 
 export const useCartStore = create<CartState>()(
   persist(
@@ -18,7 +18,7 @@ export const useCartStore = create<CartState>()(
         set((state) => {
           const productInCart = state.productsInCart.find(
             (p) => p.product.id === product.id
-          )
+          );
 
           if (productInCart) {
             return {
@@ -27,12 +27,12 @@ export const useCartStore = create<CartState>()(
                   ? { ...p, quantity: p.quantity + 1 }
                   : p
               ),
-            }
+            };
           }
 
           return {
             productsInCart: [...state.productsInCart, { product, quantity: 1 }],
-          }
+          };
         }),
       removeFromCart: (productId) =>
         set((state) => ({
@@ -49,7 +49,7 @@ export const useCartStore = create<CartState>()(
       clearCart: () => set({ productsInCart: [] }),
     }),
     {
-      name: 'cart-storage', // nome da chave no localStorage
+      name: "cart-storage", // nome da chave no localStorage
     }
   )
-)
+);

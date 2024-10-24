@@ -70,27 +70,26 @@
 }
 
 .active {
-  @apply text-primary font-bold underline underline-offset-8
+  @apply text-primary font-bold underline underline-offset-8;
 }
 
 a {
-  @apply transition
+  @apply transition;
 }
 
 a:hover {
-  @apply text-primary
+  @apply text-primary;
 }
-
 
 /* Carousel Dots */
 .swiper-pagination-bullet-active {
-  @apply bg-primary
+  @apply bg-primary;
 }
 
 .product-carousel {
-  @apply !flex justify-center gap-7 mt-5
+  @apply !flex justify-center gap-7 mt-5;
 }
 
 .slick-list {
-  @apply rounded-lg shadow-md bg-transparent
+  @apply rounded-lg shadow-md bg-transparent;
 }

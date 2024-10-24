@@ -1,8 +1,8 @@
-import { Outlet } from 'react-router-dom'
+import { Outlet } from "react-router-dom";
 
-import { Header } from '@/components/shared/Header'
-import { Footer } from '@/components/shared/Footer'
-import { Toaster } from 'sonner'
+import { Header } from "@/components/shared/Header";
+import { Footer } from "@/components/shared/Footer";
+import { Toaster } from "sonner";
 
 export function RootLayout() {
   return (
@@ -16,5 +16,5 @@ export function RootLayout() {
       <Footer />
       <Toaster richColors />
     </>
-  )
+  );
 }

@@ -1,10 +1,10 @@
-import { ReactNode } from 'react'
-import { cn } from '@/lib/utils'
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface FooterSectionProps {
-  title: string
-  children: ReactNode
-  className?: string
+  title: string;
+  children: ReactNode;
+  className?: string;
 }
 
 export function FooterSection({
@@ -14,10 +14,10 @@ export function FooterSection({
 }: FooterSectionProps) {
   return (
     <div
-      className={cn('flex flex-col items-start md:max-w-[135px]', className)}
+      className={cn("flex flex-col items-start md:max-w-[135px]", className)}
     >
-      <h3 className='font-semibold mb-7 text-lg'>{title}</h3>
+      <h3 className="font-semibold mb-7 text-lg">{title}</h3>
       {children}
     </div>
-  )
+  );
 }
