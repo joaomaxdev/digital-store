@@ -6,25 +6,30 @@ interface CollectionItemProps {
   title: string;
   imageSrc: string;
   altText: string;
+  className?: string;
 }
+
 export function CollectionItem({
   altText,
   discount,
   imageSrc,
   title,
+  className = "", // Valor padrão para evitar undefined
 }: CollectionItemProps) {
   return (
-    <div className="group bg-blue-100 p-4 rounded-lg shadow-lg relative min-h-64 overflow-hidden">
+    <div
+      className={`group bg-blue-100 p-4 rounded-lg shadow-lg relative min-h-64 overflow-hidden ${className}`}
+    >
       <img
         src={imageSrc}
         alt={altText}
-        className="h-52 md:h-64 rounded-md z-0 absolute right-0 bottom-0  group-hover:rotate-6 group-hover:scale-125 transition-all"
+        className="h-52 md:h-64 rounded-md z-0 absolute right-0 bottom-0 group-hover:rotate-6 group-hover:scale-125 transition-all"
       />
       <div className="mt-4 z-10 relative max-w-44">
         <DiscountBadge discount={discount} />
         <h2 className="text-3xl text-zinc-800 font-bold mt-2">{title}</h2>
         <Button
-          variant={"secondary"}
+          variant="secondary"
           className="text-primary w-36 py-2 px-4 rounded mt-4"
         >
           Comprar
